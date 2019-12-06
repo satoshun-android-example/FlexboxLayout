@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
@@ -7,13 +7,63 @@
   android:orientation="vertical"
   tools:ignore="HardcodedText">
 
-  <com.google.android.flexbox.FlexboxLayout
-    android:id="@+id/flexbox1"
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container1"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:layout_marginTop="16dp"
-    app:alignContent="stretch"
-    app:alignItems="stretch"
-    app:flexWrap="wrap" />
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-</LinearLayout>
+    <TextView
+      android:id="@+id/title1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:maxLines="1"
+      android:text="HOGE"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.flexbox.FlexboxLayout
+      android:id="@+id/flexbox1"
+      android:layout_width="match_parent"
+      android:layout_height="32dp"
+      android:layout_marginTop="16dp"
+      app:alignContent="stretch"
+      app:alignItems="stretch"
+      app:flexWrap="wrap"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/title1" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/container1">
+
+    <TextView
+      android:id="@+id/title2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:maxLines="1"
+      android:text="HOGE"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+      android:id="@+id/flexbox2"
+      android:layout_width="match_parent"
+      android:layout_height="32dp"
+      android:layout_marginTop="16dp"
+      android:orientation="horizontal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/title2" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

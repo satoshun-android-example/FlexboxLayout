@@ -21,5 +21,8 @@ class FlexboxPerfFragment : Fragment(R.layout.flexbox_perf_frag) {
     repeat(50) {
       binding.flexbox2.addView(Chip(context).apply { text = "CHIP $it" })
     }
+    repeat(50) {
+      binding.flexbox3.addView(Chip(context).apply { text = "CHIP $it" })
+    }
   }
 }

@@ -18,7 +18,7 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('buildSrc/src/main/kotlin/dependencies/Dependencies.kt') }}
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/Dependencies.kt') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
 
@@ -26,7 +26,7 @@ jobs:
     - uses: actions/cache@v1
       with:
         path: ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
 

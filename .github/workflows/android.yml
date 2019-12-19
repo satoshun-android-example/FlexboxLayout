@@ -43,3 +43,6 @@ jobs:
 
     - name: TEST
       run: ls ~/.gradle/caches
+
+    - name: TEST
+      run: ls ~/.gradle/caches/jars-3

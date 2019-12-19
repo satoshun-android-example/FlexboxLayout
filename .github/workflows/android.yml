@@ -39,7 +39,7 @@ jobs:
           ${{ runner.os }}-gradle-jars-
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --stacktrace
 
     - name: TEST
       run: ls ~/.gradle/caches

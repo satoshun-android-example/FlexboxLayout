@@ -30,13 +30,16 @@ jobs:
     #     restore-keys: |
     #       ${{ runner.os }}-gradle-
 
-    # save gradle cache dir only jar
+    # save gradle caches dir only jar
     - uses: actions/cache@v1
       with:
-        path: ~/.gradle/cache/jars-3
+        path: ~/.gradle/caches/jars-3
         key: ${{ runner.os }}-gradle-jars-${{ hashFiles('**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-jars-
 
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: TEST
+      run: ls ~/.gradle/caches

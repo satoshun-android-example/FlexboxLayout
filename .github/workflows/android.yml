@@ -23,12 +23,20 @@ jobs:
     #       ${{ runner.os }}-gradle-
 
     # save gradle bianry
+    # - uses: actions/cache@v1
+    #   with:
+    #     path: ~/.gradle/wrapper
+    #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-gradle-
+
+    # save gradle cache dir only jar
     - uses: actions/cache@v1
       with:
-        path: ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties') }}
+        path: ~/.gradle/cache/jars-3
+        key: ${{ runner.os }}-gradle-jars-${{ hashFiles('**/gradle-wrapper.properties') }}
         restore-keys: |
-          ${{ runner.os }}-gradle-
+          ${{ runner.os }}-gradle-jars-
 
     - name: Build with Gradle
       run: ./gradlew build

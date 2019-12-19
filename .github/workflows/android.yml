@@ -15,12 +15,12 @@ jobs:
         java-version: 1.8
 
     # save gradle dir
-    # - uses: actions/cache@v1
-    #   with:
-    #     path: ~/.gradle/caches
-    #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/Dependencies.kt') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-gradle-
+    - uses: actions/cache@v1
+      with:
+        path: ~/.gradle/caches
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/Dependencies.kt') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
 
     # save gradle bianry
     # - uses: actions/cache@v1
@@ -31,18 +31,12 @@ jobs:
     #       ${{ runner.os }}-gradle-
 
     # save gradle caches dir only jar
-    - uses: actions/cache@v1
-      with:
-        path: ~/.gradle/caches/jars-3
-        key: ${{ runner.os }}-gradle-jars-${{ hashFiles('**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-jars-
-
-    - name: TEST
-      run: tree ~/.gradle/caches
-
-    - name: TEST
-      run: ls ~/.gradle/caches/jars-3/
+    # - uses: actions/cache@v1
+    #   with:
+    #     path: ~/.gradle/caches/jars-3
+    #     key: ${{ runner.os }}-gradle-jars-${{ hashFiles('**/gradle-wrapper.properties') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-gradle-jars-
 
     - name: Build with Gradle
       run: ./gradlew build --stacktrace

@@ -17,5 +17,8 @@ class MainFragment : Fragment(R.layout.main_frag) {
     binding.flexboxPerf.setOnClickListener {
       findNavController().navigate(MainFragmentDirections.navHomeToFlexboxPerf())
     }
+    binding.flexboxMaxLine.setOnClickListener {
+      findNavController().navigate(MainFragmentDirections.navHomeToMaxLine())
+    }
   }
 }

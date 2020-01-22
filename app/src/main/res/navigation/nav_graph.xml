@@ -12,10 +12,19 @@
     <action
       android:id="@+id/nav_home_to_flexbox_perf"
       app:destination="@id/nav_flexbox_perf" />
+
+    <action
+      android:id="@+id/nav_home_to_max_line"
+      app:destination="@id/nav_max_line" />
   </fragment>
 
   <fragment
     android:id="@+id/nav_flexbox_perf"
     android:name="com.github.satoshun.example.main.flexboxperf.FlexboxPerfFragment"
     tools:layout="@layout/flexbox_perf_frag" />
+
+  <fragment
+    android:id="@+id/nav_max_line"
+    android:name="com.github.satoshun.example.main.maxline.MaxLineFragment"
+    tools:layout="@layout/flexbox_max_line" />
 </navigation>

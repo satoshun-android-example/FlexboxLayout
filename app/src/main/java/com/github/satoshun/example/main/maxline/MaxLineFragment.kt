@@ -17,5 +17,11 @@ class MaxLineFragment : Fragment(R.layout.flexbox_max_line) {
     repeat(50) {
       binding.flexbox1.addView(Chip(context).apply { text = "CHIP $it" })
     }
+    repeat(50) {
+      binding.flexbox2.addView(Chip(context).apply { text = "CHIP $it" })
+    }
+    repeat(50) {
+      binding.flexbox3.addView(Chip(context).apply { text = "CHIP $it" })
+    }
   }
 }

@@ -24,7 +24,7 @@ const val FRAGMENTX = "androidx.fragment:fragment-ktx:1.2.0"
 
 const val APPCOMPAT = "androidx.appcompat:appcompat:1.1.0"
 const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:1.0.0"
-const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-beta3"
+const val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
 const val CARDVIEW = "androidx.cardview:cardview:1.0.0"
 
 const val INSETTER = "dev.chrisbanes:insetter-ktx:0.2.0"

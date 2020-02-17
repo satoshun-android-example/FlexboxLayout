@@ -16,6 +16,10 @@
     <action
       android:id="@+id/nav_home_to_max_line"
       app:destination="@id/nav_max_line" />
+
+    <action
+      android:id="@+id/nav_home_to_max_height"
+      app:destination="@id/nav_max_height" />
   </fragment>
 
   <fragment
@@ -26,5 +30,10 @@
   <fragment
     android:id="@+id/nav_max_line"
     android:name="com.github.satoshun.example.main.maxline.MaxLineFragment"
+    tools:layout="@layout/flexbox_max_line" />
+
+  <fragment
+    android:id="@+id/nav_max_height"
+    android:name="com.github.satoshun.example.main.maxheight.FlexboxMaxHeightFragment"
     tools:layout="@layout/flexbox_max_line" />
 </navigation>

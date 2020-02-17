@@ -20,5 +20,8 @@ class MainFragment : Fragment(R.layout.main_frag) {
     binding.flexboxMaxLine.setOnClickListener {
       findNavController().navigate(MainFragmentDirections.navHomeToMaxLine())
     }
+    binding.flexboxMaxHeight.setOnClickListener {
+      findNavController().navigate(MainFragmentDirections.navHomeToMaxHeight())
+    }
   }
 }

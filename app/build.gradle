@@ -35,8 +35,6 @@ android {
 }
 
 dependencies {
-  implementation project(':mylibrary')
-
   implementation KOTLIN
 
   implementation MATERIAL
@@ -53,6 +51,7 @@ dependencies {
   implementation LIFECYCLE_RUNTIME
 
   implementation FLEXBOX
+  implementation FLEXBOX2
 
   implementation GLIDE
 

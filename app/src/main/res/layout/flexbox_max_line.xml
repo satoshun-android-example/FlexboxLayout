@@ -57,7 +57,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.mylibrary.FlexboxLayout
+    <jp.co.matchingagent.cocotsure.flexbox.FlexboxLayout
       android:id="@+id/flexbox2"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.mylibrary.FlexboxLayout
+    <jp.co.matchingagent.cocotsure.flexbox.FlexboxLayout
       android:id="@+id/flexbox3"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"

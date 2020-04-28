@@ -4,10 +4,10 @@ const val COMPILE_SDK = 29
 const val MIN_SDK = 21
 const val TARGET_SDK = 29
 
-private const val VKOTLIN = "1.3.61"
-private const val VNAVIGATION = "2.2.0-rc02"
+private const val VKOTLIN = "1.3.71"
+private const val VNAVIGATION = "2.2.0"
 
-const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.6.0-rc03"
+const val ANDROID_PLUGIN = "com.android.tools.build:gradle:3.6.3"
 const val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VKOTLIN"
 const val SAFEARGS_PLUGIN =
   "androidx.navigation:navigation-safe-args-gradle-plugin:$VNAVIGATION"
@@ -30,6 +30,7 @@ const val CARDVIEW = "androidx.cardview:cardview:1.0.0"
 const val INSETTER = "dev.chrisbanes:insetter-ktx:0.2.0"
 
 const val FLEXBOX = "com.google.android:flexbox:2.0.1"
+const val FLEXBOX2 = "com.github.MatchingAgent:flexbox-layout:2.0.1-1"
 
 const val CONTENTPAGER = "androidx.contentpager:contentpager:1.0.0-rc01"
 const val WEBKIT = "androidx.webkit:webkit:1.1.0"

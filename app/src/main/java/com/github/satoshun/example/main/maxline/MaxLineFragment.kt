@@ -48,18 +48,20 @@ class MaxLineFragment : Fragment(R.layout.flexbox_max_line) {
       maxLine = 2
     }
     binding.flexbox4.adapter = SampleAdapter().apply {
-      submitList((0..50).map { "CHIP $it" })
+      submitList((0..50).map {
+        Data("CHIP $it", false)
+      })
     }
   }
 }
 
-class SampleAdapter : ListAdapter<String, RecyclerView.ViewHolder>(
-  object : DiffUtil.ItemCallback<String>() {
-    override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
-      return oldItem == newItem
+class SampleAdapter : ListAdapter<Data, RecyclerView.ViewHolder>(
+  object : DiffUtil.ItemCallback<Data>() {
+    override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
+      return oldItem.label == newItem.label
     }
 
-    override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+    override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
       return oldItem == newItem
     }
   }
@@ -71,11 +73,22 @@ class SampleAdapter : ListAdapter<String, RecyclerView.ViewHolder>(
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
     val chip = holder.itemView as Chip
-    chip.text = getItem(position)
+    val data = getItem(position)
+    chip.text = data.label
+    chip.isChecked = data.isChecked
     chip.isCheckable = true
 
     chip.setOnClickListener {
       chip.isChecked = true
+//      data.isChecked = !data.isChecked
+//      val v = it.parent as RecyclerView
+//      val m = v.layoutManager as FlexboxLayoutManager
+//      submitList(currentList.toList())
     }
   }
 }
+
+data class Data(
+  var label: String,
+  var isChecked: Boolean
+)

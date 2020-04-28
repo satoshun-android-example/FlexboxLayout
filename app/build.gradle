@@ -45,6 +45,8 @@ dependencies {
   implementation ACTIVITYX
   implementation FRAGMENTX
 
+  implementation RECYCLERVIEW
+
   implementation LIVEDATA
   implementation LIFECYCLE_EXTENSIONS
   implementation VIEWMODEL

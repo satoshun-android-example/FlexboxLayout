@@ -1,48 +1,32 @@
-name: Android CI
+name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Gradle Wrapper Validation
+      uses: gradle/wrapper-validation-action@v1
+
     - name: set up JDK 1.8
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
 
-    # save gradle dir
-    # - uses: actions/cache@v1
-    #   with:
-    #     path: ~/.gradle/caches
-    #     key: ${{ runner.os }}-gradle-${{ hashFiles('**/Dependencies.kt') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-gradle-
+    - name: Copy CI gradle.properties
+      run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
-    # save gradle bianry
     - uses: actions/cache@v1
       with:
-        path: ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle-wrapper.properties') }}
+        path: ~/.gradle/caches
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/Dependencies.kt') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
 
-    # save gradle caches dir only jar
-    # - uses: actions/cache@v1
-    #   with:
-    #     path: ~/.gradle/caches/jars-3
-    #     key: ${{ runner.os }}-gradle-jars-${{ hashFiles('**/gradle-wrapper.properties') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-gradle-jars-
-
     - name: Build with Gradle
       run: ./gradlew build --stacktrace
-
-    - name: TEST
-      run: ls ~/.gradle/caches
-
-    - name: TEST
-      run: ls ~/.gradle/caches/jars-3

@@ -12,6 +12,9 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
 
+    - name: Run
+      run: touch hoge.text
+
     - name: TEST
       id: cpr
       uses: peter-evans/create-pull-request@v2

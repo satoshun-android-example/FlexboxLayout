@@ -1,6 +1,7 @@
 name: TEST
 
-schedule:
+on: 
+  schedule:
     - cron:  '* * * * SUN'
 
 jobs:

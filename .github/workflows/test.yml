@@ -1,5 +1,9 @@
 name: TEST
 
+on:
+  schedule:
+  - cron:  '*/15 * * * *'
+    
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -7,8 +11,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
 
     - name: Run
       run: touch hoge.text
@@ -18,8 +20,6 @@ jobs:
       uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: test
-        committer: GitHub <noreply@github.com>
-        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        commit-message: test2
         title: 'test'
         branch: create-pull-request

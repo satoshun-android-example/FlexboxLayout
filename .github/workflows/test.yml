@@ -1,6 +1,8 @@
 name: TEST
 
-on: [push, pull_request]
+on:
+  schedule:
+  - cron:  '*/15 * * * *'
 
 jobs:
   test:

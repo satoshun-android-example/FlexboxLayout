@@ -1,8 +1,8 @@
 name: TEST
 
-on:
-  schedule:
-  - cron:  '*/15 * * * *'
+# on:
+#   schedule:
+#   - cron:  '*/15 * * * *'
     
 jobs:
   test:

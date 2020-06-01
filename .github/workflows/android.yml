@@ -23,7 +23,8 @@ jobs:
 
     - uses: actions/cache@v2
       with:
-        paths: ~/.gradle/caches
+        path: |
+          ~/.gradle/caches
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/Dependencies.kt') }}
         restore-keys: |
           ${{ runner.os }}-gradle-

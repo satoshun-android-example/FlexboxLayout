@@ -19,7 +19,7 @@ jobs:
     - name: Run ktlint
       run: ktlint -F "**/*.kt"
 
-    - name: TEST
+    - name: Create PR
       id: cpr
       uses: peter-evans/create-pull-request@v2
       with:

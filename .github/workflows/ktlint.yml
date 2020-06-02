@@ -18,6 +18,7 @@ jobs:
 
     - name: Run ktlint
       run: ktlint -F "**/*.kt"
+      continue-on-error: true
 
     - name: Create PR
       id: cpr

@@ -2,6 +2,7 @@ package com.github.satoshun.example
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.github.satoshun.example.databinding.AppActBinding
 
 class AppActivity : AppCompatActivity() {

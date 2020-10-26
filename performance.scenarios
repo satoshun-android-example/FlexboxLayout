@@ -1,0 +1,4 @@
+assemble {
+    title = "Assemble"
+    tasks = ["assembleDebug"]
+}

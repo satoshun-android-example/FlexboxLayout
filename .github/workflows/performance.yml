@@ -33,4 +33,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: performance file
-        path: ./profile-out/benchmark.html
+        path: |
+          ./profile-out/benchmark.html
+          ./profile-out/benchmark.csv

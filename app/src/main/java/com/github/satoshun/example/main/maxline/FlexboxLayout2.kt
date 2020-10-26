@@ -8,6 +8,4 @@ class FlexboxLayout2 @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
-) : FlexboxLayout(context, attrs, defStyleAttr) {
-
-}
+) : FlexboxLayout(context, attrs, defStyleAttr)

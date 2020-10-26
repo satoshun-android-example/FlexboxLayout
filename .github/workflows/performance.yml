@@ -2,6 +2,11 @@ name: Performance
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: 'gradle profiler task name'
+        required: true
+        default: 'assemble'
     
 jobs:
   performance:
@@ -23,7 +28,7 @@ jobs:
     - name: run gradle-profiler for "assemble"
       run: |
         source ~/.sdkman/bin/sdkman-init.sh
-        gradle-profiler --benchmark --scenario-file performance.scenarios assemble
+        gradle-profiler --benchmark --scenario-file performance.scenarios ${{ github.event.inputs.name }}"
 
     - uses: actions/upload-artifact@v2
       with:

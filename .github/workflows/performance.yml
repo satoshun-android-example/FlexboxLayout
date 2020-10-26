@@ -22,4 +22,5 @@ jobs:
     
     - name: run gradle-profiler for "assemble"
       run: |
+        source ~/.sdkman/bin/sdkman-init.sh
         gradle-profiler --benchmark --scenario-file performance.scenarios assemble

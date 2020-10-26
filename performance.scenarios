@@ -1,4 +1,16 @@
 assemble {
     title = "Assemble"
     tasks = ["assembleDebug"]
+
+    warm-ups = 3
+}
+
+source_incremental_build_performance {
+    title = "Incremental Build Performance"
+    tasks = ["assembleDebug"]
+
+    apply-abi-change-to = "app/src/main/java/com/github/satoshun/example/AppActivity.kt"
+
+    warm-ups = 3
+    iterations = 10
 }

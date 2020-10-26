@@ -25,7 +25,7 @@ jobs:
         source ~/.sdkman/bin/sdkman-init.sh
         sdk install gradleprofiler
     
-    - name: run gradle-profiler for "assemble"
+    - name: run gradle-profiler for "${{ github.event.inputs.name }}"
       run: |
         source ~/.sdkman/bin/sdkman-init.sh
         gradle-profiler --benchmark --scenario-file performance.scenarios ${{ github.event.inputs.name }}

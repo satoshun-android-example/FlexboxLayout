@@ -14,7 +14,8 @@ jobs:
     - name: install sdkman
       run: |
         curl -s https://get.sdkman.io | bash
-        source ~/.sdkman/bin/sdkman-init.sh
 
     - name: install gradle profiler
-      run: sdk install gradleprofiler
+      run: |
+        source ~/.sdkman/bin/sdkman-init.sh
+        sdk install gradleprofiler

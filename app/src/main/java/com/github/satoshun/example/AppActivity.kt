@@ -12,5 +12,6 @@ class AppActivity : AppCompatActivity() {
     binding = AppActBinding.inflate(layoutInflater)
     setContentView(binding.root)
     setSupportActionBar(binding.toolbar)
+    BuildConfig.APPLICATION_ID
   }
 }

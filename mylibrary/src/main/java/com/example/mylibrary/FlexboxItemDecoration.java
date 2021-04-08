@@ -16,8 +16,6 @@
 
 package com.example.mylibrary;
 
-import static androidx.recyclerview.widget.RecyclerView.NO_POSITION;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -25,9 +23,11 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-import androidx.recyclerview.widget.RecyclerView;
+import static androidx.recyclerview.widget.RecyclerView.NO_POSITION;
 
 /**
  * {@link RecyclerView.ItemDecoration} implementation that can be used as item decorations between
@@ -90,6 +90,7 @@ public class FlexboxItemDecoration extends RecyclerView.ItemDecoration {
     public void onDraw(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
         drawHorizontalDecorations(canvas, parent);
         drawVerticalDecorations(canvas, parent);
+//        String a = BuildConfig.BUILD_TYPE;
     }
 
     @Override
